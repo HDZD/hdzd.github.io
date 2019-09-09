@@ -3,10 +3,20 @@
 <head>
     <title>HDZD</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body style="margin: 0; padding:0;">
-    <div class="section">
+    <div id="top" class="section">
         <div class="leftCont">
             <div class="Title">
                 <span style="color:grey;">
@@ -25,19 +35,19 @@
                         &lt;
                     </span>
                     <span class="hoverable">
-                            <a href="#prog">Programmer</a>
+                        <a href="#prog">Programmer</a>
                     </span>
                     <span style="color:grey;">
                         &gt; | &lt;
                     </span>
                     <span class="hoverable">
-                            <a href="#hack">Cyber-Security Researcher</a>
+                        <a href="#hack">Cyber-Security Researcher</a>
                     </span>
                     <span style="color:grey;">
                         &gt; | &lt;
                     </span>
                     <span class="hoverable">
-                            <a href="#gamedev">Game-Developer</a>
+                        <a href="#gamedev">Game-Developer</a>
                     </span>
                     <span style="color:grey;">
                         &gt;
@@ -92,6 +102,51 @@
         </div>
     </div>
 
+    <div class="accordion">
+        <div class="accordion-content">
+            <div class="imgcontainer">
+                <a href="https://www.facebook.com/ProSecLU/" target="_blank">
+                    <img src="images/hackme.jpg" alt="Notebook" style="width:100%;">
+                    <div class="content">
+                        <h1 style="font-size: 2vw !important;">Hack_Me</h1>
+                        <p>Cyber-Security Course give at the LU faculty of sciences</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="imgcontainer">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/linkedin.png" alt="Notebook" style="width:100%;">
+                    <div class="content">
+                        <h1 style="font-size: 2vw !important;">Linkedin Vulnerability</h1>
+                        <p>Acknowledged by the Linkedin Cyber-Security team</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="imgcontainer">
+                <a href="https://www.ul.edu.lb/common/news.aspx?newsId=2198&lang=1&fbclid=IwAR37GiZYmciA9Jl-xWTTQbUP9as5srl2plGX5z_AHPo2KUrxp-3uwS7qPp0"
+                    target="_blank">
+                    <img src="images/lu.png" alt="Notebook" style="width:100%;">
+                    <div class="content">
+                        <h1 style="font-size: 2vw !important;">Instagram Vulnerability</h1>
+                        <p>
+                            Recieved a bounty from the Instagram Cyber-Security team.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="accordion-header">
+            <svg width="5%" height="5%" viewBox="0 0 100 55" xml:space="preserve">
+                <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    points="
+                    0,0 50,50 100,0 " />
+            </svg>
+        </div>
+    </div>
+
     <div class="division2" id="prog">
         <div class="secTitle">
             <div class="Title" style="font-size: 4vw; color: cadetblue">
@@ -114,9 +169,6 @@
                 C/C++ | C# | Java | HTML & CSS | JavaScript | PHP | Shell & Batch Scripts | Lisp(Clisp)
                 <br>
                 <br>
-                Computer Science Degree from the Lebanese Univeristy Faculty of Sciences
-                <br>
-                <br>
 
                 <a href='https://github.com/HDZD' target="_blank"><img alt='Github Repos'
                         src='images/GitHub-Mark.png'></a>
@@ -125,6 +177,57 @@
                 <a href='https://www.linkedin.com/in/hdzd/' target="_blank"><img alt='LinkedIn Profile'
                         src='images/LinkedIn_logo.png'></a>
             </div>
+        </div>
+    </div>
+
+    <div class="accordion" style="background: none;">
+        <div class="accordion-content" style="background: none;  color: #403F4C;">
+            Computer Science Degree from the Lebanese Univeristy Faculty of Sciences
+            <br><br>
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo1" data-slide-to="1"></li>
+                    <li data-target="#demo1" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="https://play.google.com/store/apps/details?id=commystuff.wix.hdzd.colorblindtest"
+                            target="_blank"><img alt="Color Blindness Test"
+                                style="width:auto; max-height:70% !important;" src="images/cbt.png"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://play.google.com/store/apps/details?id=tk.hdzd.acneawarness"
+                            target="_blank"><img alt="Acne Awarness" style="width:auto; max-height:70% !important;"
+                                src="images/acne.png"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://play.google.com/store/apps/details?id=com.kz.bmi" target="_blank"><img
+                                alt="Body Mass Index Calculator" style="width:auto; max-height:70% !important;"
+                                src="images/bmi.png"></a>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo1" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="accordion-header">
+            <svg width="5%" height="5%" viewBox="0 0 100 55" xml:space="preserve">
+                <polyline fill="none" stroke="#282b32" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    points="0,0 50,50 100,0 " />
+            </svg>
         </div>
     </div>
 
@@ -160,6 +263,76 @@
         </div>
     </div>
 
+    <div class="accordion">
+        <div class="accordion-content">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="https://play.google.com/store/apps/details?id=com.HDZD.flappy_nerd"
+                            target="_blank"><img alt="Flappy Nerd"
+                                style="width:70% !important; height: auto !important;" src="images/flappynerd.png"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://hdzd.itch.io/night-before-christmas-elves-gone-wild" target="_blank"><img
+                                alt="Christmas GameJam" style="width:70% !important; height: auto !important;"
+                                src="images/christmas.png"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="https://gamejolt.com/games/arrow-hero/20577" target="_blank"><img alt="Arrow Hero"
+                                style="width:70% !important; height: auto !important;" src="images/arrowhero.jpg"></a>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="accordion-header">
+            <svg width="5%" height="5%" viewBox="0 0 100 55" xml:space="preserve">
+                <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    points="
+                    0,0 50,50 100,0 " />
+            </svg>
+        </div>
+    </div>
+
+    <div class="name">
+        Contact Me
+    </div>
+
+    <div class="container">
+        <form method="POST" action="https://hdzdid.000webhostapp.com/contact.php">
+
+            <label for="email" class="par"  style="color: #282b32;">Email Address</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+            <br>
+
+            <label for="subject" class="par"  style="color: #282b32;">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px;" required></textarea>
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
     <div class="footer">
         <div class="col">
             made with ♥ and tea
@@ -168,6 +341,35 @@
             <a href='mailto:hadizein66@gmail.com'>hadizein66@gmail.com</a>
         </div>
     </div>
+
+    <a class="floatbutton" href="#top">
+        <img class="floatbutton" id="up" src="images/v.png">
+    </a>
+
+    <script>
+        mybutton = $('#up')[0];
+
+        scrollFunction();
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            var y = window.scrollY;
+            var height = window.screen.height / 2;
+
+            if (y > height) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        $(".accordion").on("click", ".accordion-header", function () {
+            $(this).toggleClass("active").prev().slideToggle();
+        });
+    </script>
 </body>
 
 </html>
