@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Support My Work</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="page">
+        <header class="hero">
+            <div class="hero-inner">
+                <h1 class="hero-title">Support My Work</h1>
+                <p class="hero-sub">If you value my research, tools, and tutorials, a small contribution helps me keep creating.</p>
+            </div>
+        </header>
+
+        <section class="content">
+            <article class="card card-crypto">
+                <h2 class="card-title">Cryptocurrency</h2>
+                <div class="crypto-grid">
+                    <div class="crypto-item">
+                        <div class="crypto-name">Bitcoin (BTC)</div>
+                        <div class="qr-container">
+                            <img src="/images/BtcQR.jpeg" alt="Bitcoin QR Code" class="qr-img">
+                        </div>
+                        <div class="crypto-address">
+                            <code class="mono" id="btc-address">bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255</code>
+                            <button class="icon-btn" data-addr="bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255"
+                                title="Copy Bitcoin address">Copy</button>
+                            <button type="button" class="icon-btn" title="Open in wallet" onclick="window.location.href='bitcoin:bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255?'">Donate</button>
+                        </div>
+                    </div>
+
+                    <div class="crypto-item">
+                        <div class="crypto-name">Monero (XMR)</div>
+                        <div class="qr-container">
+                            <img src="/images/XmrQr.jpeg" alt="Monero QR Code" class="qr-img">
+                        </div>
+                        <div class="crypto-address">
+                            <code class="mono" id="xmr-address">479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX</code>
+                            <button class="icon-btn" data-addr="479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX"
+                                title="Copy Monero address">Copy</button>
+                            <button type="button" class="icon-btn" title="Open in wallet" onclick="window.location.href='monero:479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX?'">Donate</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="support-note">
+                <h3>Why donate?</h3>
+                <p>Donations keep my projects online, fund research, and let me spend more time creating free content.</p>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div>Made with ♥ and tea — <a href="mailto:hadizein66@gmail.com">hadizein66@gmail.com</a></div>
+                <div class="footer-right"><a href="index.html">Back to site</a></div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
+
+    <script>
+        // copy-to-clipboard for crypto addresses
+        document.addEventListener('click', function (e) {
+            if (!e.target.matches('.icon-btn')) return;
+            const addr = e.target.getAttribute('data-addr');
+            if (!addr) return;
+            navigator.clipboard.writeText(addr).then(() => showToast('Address copied'));
+        });
+
+        function showToast(text) {
+            const t = document.getElementById('toast');
+            t.textContent = text;
+            t.classList.add('visible');
+            clearTimeout(t._timeout);
+            t._timeout = setTimeout(() => t.classList.remove('visible'), 2000);
+        }
+    </script>
+</body>
+
+</html>
