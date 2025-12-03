@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaFocus - Reclaim Your Time on Instagram</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4F46E5', // Indigo for action
+                        'primary-dark': '#4338CA',
+                        'secondary': '#10B981', // Emerald for success
+                        'background': '#F9FAFB',
+                        'card': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F9FAFB;
+        }
+        /* Custom focus ring for accessibility */
+        .btn-focus:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.4); /* Primary color shadow */
+        }
+    </style>
+</head>
+<body class="bg-background text-gray-800">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-card shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Title -->
+                <a href="#hero" class="text-3xl font-extrabold text-primary tracking-tight">
+                    <div class="flex items-center gap-2">
+                        <img src="/images/InstaFocus.png" alt="InstaFocus Logo" class="h-12 w-auto" />
+                        <span>InstaFocus</span>
+                    </div>
+                </a>
+                <!-- CTA Button (Desktop) -->
+                <button onclick="downloadExtension()" class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-secondary hover:bg-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition duration-150 btn-focus">
+                    <img src="/images/InstaFocus.png" alt="InstaFocus Logo" class="h-6 w-auto mr-2" />
+                    Add to Chrome (Free)
+                </button>
+
+                <!-- Mobile Menu Button (Hamburger) - Omitted for simplicity, focusing on core content -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="bg-card pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                InstaFocus: <span class="text-primary-dark block mt-2 sm:mt-4">Reclaim Your Time on Instagram</span>
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
+                Cut through the noise - remove Reels and algorithmic distractions so you spend less time scrolling and more time <strong>connecting with people who matter</strong>.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button onclick="downloadExtension()" class="px-8 py-3 text-lg font-semibold rounded-xl shadow-xl text-white bg-primary hover:bg-primary-dark transform hover:scale-105 transition duration-300 ease-in-out btn-focus">
+                    <img src="/images/InstaFocus.png" alt="InstaFocus Logo" class="h-6 w-auto mr-2 inline" />
+                    Get InstaFocus Now (It's Free)
+                </button>
+            </div>
+
+            <p class="mt-8 text-sm text-gray-400 italic">
+                Lightweight Chrome Extension for desktop use.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- 2. Features Section -->
+    <section id="features" class="pt-4 pb-4 sm:pt-4 sm:pb-4 lg:pt-4 lg:pb-36 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Focused Productivity</h2>
+                <p class="mt-2 text-3xl leading-tight">
+                    Built for Deep Connection, Not Distraction
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="mt-16 grid gap-12 lg:grid-cols-3 md:grid-cols-2">
+
+                <!-- Feature 1: Reel Blocker -->
+                <div class="flex flex-col items-start p-6 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-red-100 text-red-600 text-2xl font-bold">
+                        🚫
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Zero Reels</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Completely removes the Reels tab and video content from your entire feed. Say goodbye to the scroll trap.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Explore Lockout -->
+                <div class="flex flex-col items-start p-6 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 text-yellow-600 text-2xl font-bold">
+                        🔒
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Explore Page Lockdown</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Disables the link to the algorithmic 'Explore' tab, preventing you from getting lost in suggested content.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Clean & Simple -->
+                <div class="flex flex-col items-start p-6 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">
+                        🧼
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Cleaner, Faster</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Removes distracting sidebars, unnecessary widgets, and clutter for a minimalist browsing experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for CTA Button -->
+    <script>
+        /**
+         * Handles the call to action click.
+         * In a real application, replace the placeholder URL with your actual Chrome Web Store link.
+         */
+        function downloadExtension() {
+            const extensionUrl = "https://chrome.google.com/webstore/detail/instafocus/YOUR_EXTENSION_ID";
+            window.location.href = extensionUrl;
+        }
+    </script>
+</body>
+</html>
