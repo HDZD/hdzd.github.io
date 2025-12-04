@@ -8,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind for Inter font and custom colors -->
     <script>
+        // Enable class-based dark mode management
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -30,7 +32,7 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #F9FAFB;
+            /* Default background set here, Tailwind classes will handle dark mode */
         }
         /* Custom focus ring for accessibility */
         .btn-focus:focus {
@@ -39,50 +41,66 @@
         }
     </style>
 </head>
-<body class="bg-background text-gray-800">
+<!-- Apply light mode base and dark mode alternatives -->
+<body class="bg-background text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-card shadow-md">
+    <header class="sticky top-0 z-50 bg-card shadow-md dark:bg-gray-800 dark:shadow-xl transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo/Title -->
                 <a href="/" class="text-3xl font-extrabold text-primary tracking-tight">
                     My Projects
                 </a>
-                <!-- Back Button -->
-                <a href="/" class="px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus">
-                    Back to Site
-                </a>
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-500 hover:text-primary-dark dark:text-gray-400 dark:hover:text-primary transition duration-150 btn-focus" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (visible in light mode) -->
+                        <svg id="sun-icon" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon Icon (visible in dark mode) -->
+                        <svg id="moon-icon" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <!-- Back Button -->
+                    <a href="/" class="px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus">
+                        Back to Site
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="bg-card pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20">
+    <section id="hero" class="bg-card dark:bg-gray-800 pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 leading-tight transition-colors duration-300">
                 Support My Work
             </h1>
-            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-500 dark:text-gray-400 transition-colors duration-300">
                 If you value my research, tools, and tutorials, a small contribution helps me keep creating <strong>free content and tools</strong>.
             </p>
         </div>
     </section>
 
     <!-- Cryptocurrency Section -->
-    <section class="pt-2 pb-8 sm:pt-2 sm:pb-8 lg:pt-2 lg:pb-8 bg-background">
+    <section class="pt-2 pb-8 sm:pt-2 sm:pb-8 lg:pt-2 lg:pb-8 bg-background dark:bg-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Crypto Grid -->
             <div class="mt-12 grid gap-8 lg:grid-cols-2">
                 <!-- Bitcoin Card -->
-                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Bitcoin (BTC)</h3>
+                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl dark:bg-gray-800 dark:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-6 transition-colors duration-300">Bitcoin (BTC)</h3>
                     <div class="mb-6">
-                        <img src="/images/BtcQR.jpeg" alt="Bitcoin QR Code" class="h-64 w-64 rounded-lg shadow-md">
+                        <!-- Placeholder for Bitcoin QR Code -->
+                        <img src="/images/BtcQR.jpeg" alt="Bitcoin QR Code Placeholder" class="h-64 w-64 rounded-lg shadow-md">
                     </div>
                     <div class="w-full">
-                        <p class="text-sm text-gray-500 mb-3">Address:</p>
-                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono">bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255</code>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 transition-colors duration-300">Address:</p>
+                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono dark:bg-gray-700 dark:text-gray-200 transition-colors duration-300">bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255</code>
                         <div class="flex gap-3 justify-center">
                             <button class="icon-btn px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus" data-addr="bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255" title="Copy Bitcoin address">
                                 Copy Address
@@ -95,14 +113,15 @@
                 </div>
 
                 <!-- Monero Card -->
-                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Monero (XMR)</h3>
+                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl dark:bg-gray-800 dark:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-6 transition-colors duration-300">Monero (XMR)</h3>
                     <div class="mb-6">
-                        <img src="/images/XmrQr.jpeg" alt="Monero QR Code" class="h-64 w-64 rounded-lg shadow-md">
+                        <!-- Placeholder for Monero QR Code -->
+                        <img src="/images/XmrQr.jpeg" alt="Monero QR Code Placeholder" class="h-64 w-64 rounded-lg shadow-md">
                     </div>
                     <div class="w-full">
-                        <p class="text-sm text-gray-500 mb-3">Address:</p>
-                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono">479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX</code>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 transition-colors duration-300">Address:</p>
+                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono dark:bg-gray-700 dark:text-gray-200 transition-colors duration-300">479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX</code>
                         <div class="flex gap-3 justify-center">
                             <button class="icon-btn px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus" data-addr="479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX" title="Copy Monero address">
                                 Copy Address
@@ -118,7 +137,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <footer class="bg-gray-900 text-gray-400 dark:bg-gray-950 py-8 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>Made with ♥ and tea — <a href="mailto:hadizein66@gmail.com" class="text-primary hover:text-primary-dark transition">hadizein66@gmail.com</a></div>
@@ -131,14 +150,49 @@
     <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-3 rounded-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out" role="status" aria-live="polite">Copied!</div>
 
     <script>
-        // copy-to-clipboard for crypto addresses
-        document.addEventListener('click', function (e) {
-            if (!e.target.matches('.icon-btn')) return;
-            const addr = e.target.getAttribute('data-addr');
-            if (!addr) return;
-            navigator.clipboard.writeText(addr).then(() => showToast('Address copied'));
-        });
+        // --- Dark Mode Logic ---
 
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        /**
+         * Initializes the theme based on local storage or system preference.
+         */
+        function initializeTheme() {
+            const storedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+                body.classList.add('dark');
+            } else {
+                body.classList.remove('dark');
+            }
+        }
+
+        /**
+         * Toggles the dark class on the body and saves the preference.
+         */
+        function toggleDarkMode() {
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Event listener for the theme toggle button
+        themeToggle.addEventListener('click', toggleDarkMode);
+
+        // Run initialization on load
+        initializeTheme();
+
+        // --- Clipboard and Toast Logic (iFrame safe) ---
+        
+        /**
+         * Function to show a temporary toast notification.
+         * @param {string} text - The message to display in the toast.
+         */
         function showToast(text) {
             const t = document.getElementById('toast');
             t.textContent = text;
@@ -150,7 +204,49 @@
                 t.classList.remove('opacity-100');
             }, 2000);
         }
+
+        /**
+         * iFrame-safe copy-to-clipboard function using document.execCommand('copy').
+         * @param {string} text - The text to copy.
+         * @returns {boolean} True if copy was successful, false otherwise.
+         */
+        function copyToClipboard(text) {
+            // Create a temporary textarea element
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            // Ensure the textarea is off-screen but accessible
+            tempInput.style.position = 'fixed';
+            tempInput.style.left = '-9999px';
+            tempInput.style.top = '0';
+            document.body.appendChild(tempInput);
+            
+            // Select the text and execute the copy command
+            tempInput.select();
+            let success = false;
+            try {
+                success = document.execCommand('copy');
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+            
+            // Clean up the temporary element
+            document.body.removeChild(tempInput);
+            return success;
+        }
+
+        // Event listener for copy buttons
+        document.addEventListener('click', function (e) {
+            if (!e.target.matches('.icon-btn')) return;
+            const addr = e.target.getAttribute('data-addr');
+            if (!addr) return;
+            
+            if (copyToClipboard(addr)) {
+                showToast('Address copied');
+            } else {
+                showToast('Copy failed, please copy manually');
+            }
+        });
+
     </script>
 </body>
-
 </html>
