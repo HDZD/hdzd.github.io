@@ -1,70 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support My Work</title>
-    <link rel="stylesheet" href="./index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4F46E5', // Indigo for action
+                        'primary-dark': '#4338CA',
+                        'secondary': '#10B981', // Emerald for success
+                        'background': '#F9FAFB',
+                        'card': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F9FAFB;
+        }
+        /* Custom focus ring for accessibility */
+        .btn-focus:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.4); /* Primary color shadow */
+        }
+    </style>
 </head>
+<body class="bg-background text-gray-800">
 
-<body>
-    <main class="page">
-        <header class="hero">
-            <div class="hero-inner">
-                <h1 class="hero-title">Support My Work</h1>
-                <p class="hero-sub">If you value my research, tools, and tutorials, a small contribution helps me keep creating.</p>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-card shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Title -->
+                <a href="/" class="text-3xl font-extrabold text-primary tracking-tight">
+                    My Projects
+                </a>
+                <!-- Back Button -->
+                <a href="/" class="px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus">
+                    Back to Site
+                </a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section class="content">
-            <article class="card card-crypto">
-                <h2 class="card-title">Cryptocurrency</h2>
-                <div class="crypto-grid">
-                    <div class="crypto-item">
-                        <div class="crypto-name">Bitcoin (BTC)</div>
-                        <div class="qr-container">
-                            <img src="/images/BtcQR.jpeg" alt="Bitcoin QR Code" class="qr-img">
-                        </div>
-                        <div class="crypto-address">
-                            <code class="mono" id="btc-address">bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255</code>
-                            <button class="icon-btn" data-addr="bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255"
-                                title="Copy Bitcoin address">Copy</button>
-                            <button type="button" class="icon-btn" title="Open in wallet" onclick="window.location.href='bitcoin:bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255?'">Donate</button>
-                        </div>
+    <!-- Hero Section -->
+    <section id="hero" class="bg-card pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                Support My Work
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
+                If you value my research, tools, and tutorials, a small contribution helps me keep creating <strong>free content and tools</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cryptocurrency Section -->
+    <section class="pt-2 pb-8 sm:pt-2 sm:pb-8 lg:pt-2 lg:pb-8 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Crypto Grid -->
+            <div class="mt-12 grid gap-8 lg:grid-cols-2">
+                <!-- Bitcoin Card -->
+                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Bitcoin (BTC)</h3>
+                    <div class="mb-6">
+                        <img src="/images/BtcQR.jpeg" alt="Bitcoin QR Code" class="h-64 w-64 rounded-lg shadow-md">
                     </div>
-
-                    <div class="crypto-item">
-                        <div class="crypto-name">Monero (XMR)</div>
-                        <div class="qr-container">
-                            <img src="/images/XmrQr.jpeg" alt="Monero QR Code" class="qr-img">
-                        </div>
-                        <div class="crypto-address">
-                            <code class="mono" id="xmr-address">479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX</code>
-                            <button class="icon-btn" data-addr="479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX"
-                                title="Copy Monero address">Copy</button>
-                            <button type="button" class="icon-btn" title="Open in wallet" onclick="window.location.href='monero:479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX?'">Donate</button>
+                    <div class="w-full">
+                        <p class="text-sm text-gray-500 mb-3">Address:</p>
+                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono">bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255</code>
+                        <div class="flex gap-3 justify-center">
+                            <button class="icon-btn px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus" data-addr="bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255" title="Copy Bitcoin address">
+                                Copy Address
+                            </button>
+                            <button type="button" class="px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-secondary hover:bg-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition duration-150 btn-focus" title="Open in wallet" onclick="window.location.href='bitcoin:bc1qqf2pulh67hu5ptg3hq9gmyxlfm0m3cv6ey7255?'">
+                                Donate Now
+                            </button>
                         </div>
                     </div>
                 </div>
-            </article>
 
-            <div class="support-note">
-                <h3>Why donate?</h3>
-                <p>Donations keep my projects online, fund research, and let me spend more time creating free content.</p>
+                <!-- Monero Card -->
+                <div class="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Monero (XMR)</h3>
+                    <div class="mb-6">
+                        <img src="/images/XmrQr.jpeg" alt="Monero QR Code" class="h-64 w-64 rounded-lg shadow-md">
+                    </div>
+                    <div class="w-full">
+                        <p class="text-sm text-gray-500 mb-3">Address:</p>
+                        <code class="block text-xs sm:text-sm text-gray-800 bg-gray-100 p-3 rounded-lg break-all mb-4 font-mono">479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX</code>
+                        <div class="flex gap-3 justify-center">
+                            <button class="icon-btn px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-150 btn-focus" data-addr="479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX" title="Copy Monero address">
+                                Copy Address
+                            </button>
+                            <button type="button" class="px-4 py-2 text-sm font-semibold rounded-lg shadow-sm text-white bg-secondary hover:bg-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition duration-150 btn-focus" title="Open in wallet" onclick="window.location.href='monero:479SfDMhc6QJ6V9s6tnzHE5RByPbNcu4fdCz2QJ1dwoAdwGPgqqcqvMUQZYyhmYH3mJ97r1nDmXbpZ621PYTMpboV7MfUYX?'">
+                                Donate Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="site-footer">
-            <div class="footer-inner">
-                <div>Made with ♥ and tea — <a href="mailto:hadizein66@gmail.com">hadizein66@gmail.com</a></div>
-                <div class="footer-right"><a href="index.html">Back to site</a></div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>Made with ♥ and tea — <a href="mailto:hadizein66@gmail.com" class="text-primary hover:text-primary-dark transition">hadizein66@gmail.com</a></div>
+                <a href="/" class="text-primary hover:text-primary-dark transition">Back to site</a>
             </div>
-        </footer>
-    </main>
+        </div>
+    </footer>
 
-    <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-3 rounded-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out" role="status" aria-live="polite">Copied!</div>
 
     <script>
         // copy-to-clipboard for crypto addresses
@@ -78,9 +142,13 @@
         function showToast(text) {
             const t = document.getElementById('toast');
             t.textContent = text;
-            t.classList.add('visible');
+            t.classList.remove('opacity-0', 'pointer-events-none');
+            t.classList.add('opacity-100');
             clearTimeout(t._timeout);
-            t._timeout = setTimeout(() => t.classList.remove('visible'), 2000);
+            t._timeout = setTimeout(() => {
+                t.classList.add('opacity-0', 'pointer-events-none');
+                t.classList.remove('opacity-100');
+            }, 2000);
         }
     </script>
 </body>
